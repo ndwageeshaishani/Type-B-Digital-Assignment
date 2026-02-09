@@ -3,7 +3,6 @@ package com.wageesha.typebdigitalassignment.service.impl;
 import com.wageesha.typebdigitalassignment.dto.GreetingResponseDTO;
 import com.wageesha.typebdigitalassignment.exception.InvalidNameException;
 import com.wageesha.typebdigitalassignment.service.NameService;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 public class NameServiceImpl implements NameService {
 
     @Override
-    @SneakyThrows
     public GreetingResponseDTO greet(String name) {
         if (isValidName(name)) {
             return GreetingResponseDTO.builder().message("Hello " + formatName(name)).build();
